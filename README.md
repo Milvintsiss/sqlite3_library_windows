@@ -18,7 +18,7 @@ Open an override for windows:
 	import 'package:sqlite3_library_windows/sqlite3_library_windows.dart';
     
     void main() {
-      open.overrideFor(OperatingSystem.windows, openOnWindows);
+      open.overrideFor(OperatingSystem.windows, openSQLiteOnWindows);
     
       final db = sqlite3.openInMemory();
       db.dispose();
