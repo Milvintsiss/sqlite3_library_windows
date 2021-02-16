@@ -5,8 +5,11 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 
+///relative path to sqlite3 library when debuging
 const sqlite3_windows_debug_libraryPath =
     'build\\flutter_assets\\packages\\sqlite3_library_windows\\sqlite3.dll';
+
+///relative path in release bundle to sqlite3 library
 const sqlite3_windows_release_libraryPath =
     'data\\flutter_assets\\packages\\sqlite3_library_windows\\sqlite3.dll';
 

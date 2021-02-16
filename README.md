@@ -1,4 +1,3 @@
-
 # SQLite3 library for windows
 
 This package help you bundle SQLite3 library to your apps.
