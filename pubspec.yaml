@@ -1,0 +1,24 @@
+name: sqlite3_library_windows
+description: Flutter package to bundle sqlite3 library to your windows apps
+version: 1.0.0
+repository: https://github.com/Milvintsiss/sqlite3_library_windows
+author: Milvintsiss <contact@milvintsiss.com>
+homepage: https://github.com/Milvintsiss/sqlite3_library_windows
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+# The following section is specific to Flutter.
+flutter:
+   assets:
+     - sqlite3.dll
+
