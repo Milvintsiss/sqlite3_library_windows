@@ -26,5 +26,5 @@ Open an override for windows:
 	  runApp(MyApp());
     }
 
-And... that's it! No need to provide you with your own sqlite3.dll file🙂
+And... that's it! No need to provide your own sqlite3.dll file🙂
 
