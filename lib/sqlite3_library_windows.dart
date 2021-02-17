@@ -22,6 +22,7 @@ DynamicLibrary openSQLiteOnWindows() {
     print(_yellow("SQLite3 successfully loaded"));
   } catch (e) {
     try {
+      print(e);
       print(_red("Fail loading SQLite3 from library file, "
           "trying loading from system..."));
 
@@ -29,6 +30,7 @@ DynamicLibrary openSQLiteOnWindows() {
 
       print(_yellow("SQLite3 successfully loaded"));
     } catch (e) {
+      print(e);
       print(_red("Fail loading SQLite3."));
     }
   }
