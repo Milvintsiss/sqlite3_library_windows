@@ -28,10 +28,3 @@ Add an override for windows and give it the `openSQLiteOnWindows` function provi
     }
 
 And... that's it! No need to provide your own sqlite3.dll file🙂
-
-## I want to handle the SQLite3 library myself
-
-No problem! You can use `getSQLiteLibraryPathOnWindows()` function to 
-find the relative path of the SQLite3 library file.
-If you want the absolute path you can do something like this 
-`File(getSQLiteLibraryPathOnWindows()).absolute.path`

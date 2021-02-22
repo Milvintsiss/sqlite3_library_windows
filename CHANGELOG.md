@@ -1,3 +1,7 @@
+## [1.0.1] - 2021/02/22
+
+* fix error when launching app from different directory than the one containing the executable
+
 ## [1.0.0] - 2021/02/16
 
 * Initial release
