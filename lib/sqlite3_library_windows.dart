@@ -4,21 +4,26 @@ import 'dart:ffi' show DynamicLibrary;
 
 import 'dart:io' show Platform, File;
 
-///relative path to SQLite3 library file
-const sqlite3_windows_libraryPath =
-    '\\data\\flutter_assets\\packages\\sqlite3_library_windows\\sqlite3.dll';
+///relative path to 64-bit SQLite3 library file
+const sqlite3_x64_windows_libraryPath =
+    '\\data\\flutter_assets\\packages\\sqlite3_library_windows\\sqlite3_x64.dll';
 
-///This function open SQLite3 in memory and return the associated DynamicLibrary
-///object.
-DynamicLibrary openSQLiteOnWindows() {
-  DynamicLibrary library;
+///relative path to 32-bit SQLite3 library file
+const sqlite3_x86_windows_libraryPath =
+    '\\data\\flutter_assets\\packages\\sqlite3_library_windows\\sqlite3_x86.dll';
+
+///This function open SQLite3 in memory and return the associated DynamicLibrary.
+///Return null if app fail to open SQLite3.
+DynamicLibrary? openSQLiteOnWindows() {
+  DynamicLibrary? library;
 
   String executableDirectoryPath =
       File(Platform.resolvedExecutable).parent.path;
   print('executableDirectoryPath: $executableDirectoryPath');
   try {
-    String sqliteLibraryPath =
-        executableDirectoryPath + sqlite3_windows_libraryPath;
+    String sqliteLibraryPath = _is64bitWindows
+        ? executableDirectoryPath + sqlite3_x64_windows_libraryPath
+        : executableDirectoryPath + sqlite3_x86_windows_libraryPath;
     print('SQLite3LibraryPath: $sqliteLibraryPath');
 
     library = DynamicLibrary.open(sqliteLibraryPath);
@@ -40,6 +45,9 @@ DynamicLibrary openSQLiteOnWindows() {
   }
   return library;
 }
+
+bool _is64bitWindows =
+    Platform.environment['PROCESSOR_ARCHITECTURE']!.toLowerCase() != 'x86';
 
 String _red(String string) => '\x1B[31m$string\x1B[0m';
 

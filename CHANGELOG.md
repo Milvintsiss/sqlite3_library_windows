@@ -1,3 +1,8 @@
+## [1.0.2-dev.0] - 2021/03/04
+
+* migrate to null-safety
+* added 32-bit support
+
 ## [1.0.1] - 2021/02/22
 
 * fix error when launching app from different directory than the one containing the executable
