@@ -8,10 +8,10 @@ import 'dart:io' show Platform, File;
 const sqlite3_windows_libraryPath =
     '\\data\\flutter_assets\\packages\\sqlite3_library_windows\\sqlite3.dll';
 
-///This function open SQLite3 in memory and return the associated DynamicLibrary
-///object.
-DynamicLibrary openSQLiteOnWindows() {
-  DynamicLibrary library;
+///This function open SQLite3 in memory and return the associated DynamicLibrary.
+///Return null if app fail to open SQLite3.
+DynamicLibrary? openSQLiteOnWindows() {
+  DynamicLibrary? library;
 
   String executableDirectoryPath =
       File(Platform.resolvedExecutable).parent.path;
