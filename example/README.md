@@ -1,0 +1,1 @@
+# sqlite3_library_windows example

@@ -1,24 +1,23 @@
+/// Flutter package to bundle sqlite3 library to your windows apps
 library sqlite3_library_windows;
 
 import 'dart:ffi' show DynamicLibrary;
-
 import 'dart:io' show Platform, File;
 
-///relative path to SQLite3 library file
-const sqlite3_windows_libraryPath =
+/// Relative path to SQLite3 dll library file
+const sqlite3WindowsLibraryPath =
     '\\data\\flutter_assets\\packages\\sqlite3_library_windows\\sqlite3.dll';
 
-///This function open SQLite3 in memory and return the associated DynamicLibrary.
-///Return null if app fail to open SQLite3.
-DynamicLibrary? openSQLiteOnWindows() {
-  DynamicLibrary? library;
+/// This function open SQLite3 in memory and return the associated DynamicLibrary.
+DynamicLibrary openSQLiteOnWindows() {
+  late DynamicLibrary library;
 
   String executableDirectoryPath =
       File(Platform.resolvedExecutable).parent.path;
   print('executableDirectoryPath: $executableDirectoryPath');
   try {
     String sqliteLibraryPath =
-        executableDirectoryPath + sqlite3_windows_libraryPath;
+        executableDirectoryPath + sqlite3WindowsLibraryPath;
     print('SQLite3LibraryPath: $sqliteLibraryPath');
 
     library = DynamicLibrary.open(sqliteLibraryPath);
@@ -35,7 +34,7 @@ DynamicLibrary? openSQLiteOnWindows() {
       print(_yellow("SQLite3 successfully loaded"));
     } catch (e) {
       print(e);
-      print(_red("Fail to load SQLite3."));
+      print(_red("Failed to load SQLite3."));
     }
   }
   return library;

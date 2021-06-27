@@ -1,3 +1,9 @@
+## [2.1.0] - 2021/06/27
+
+* Fixed null safety issue
+* Added an example
+* Doc update
+
 ## [2.0.0] - 2021/03/07
 
 * migrate to null safety
