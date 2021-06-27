@@ -1,0 +1,12 @@
+name: command_line_app_example
+description: A simple command-line application.
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  sqlite3: ^1.1.2
+  sqlite3_library_windows:
+    path: ..
