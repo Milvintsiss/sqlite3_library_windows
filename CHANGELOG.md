@@ -1,3 +1,7 @@
+## [2.1.0+1] - 2022/04/14
+
+* Marks package as discontinued
+
 ## [2.1.0] - 2021/06/27
 
 * Fixed null safety issue
